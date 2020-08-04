@@ -52,22 +52,4 @@
             timer = setTimeout(moveKitties, 5000);
         }
     });
-
-    // when a transition finishes, this function runs!
-    // when the kitty moves fully offscreen, "transitionend" will happen. at this point we can safely remove its "offscreen-left" class
-    /*
-            We have 2 transitions that happen in this project:
-                1. queue -> onscreen 
-                2. onscreen -> offscreen-left 
-            In "transitionend" the transition we care about is the transition to offscreen-left. In "transitionend" we DON'T care about the transition to onscreen!
-
-            What does that mean for us?
-                For us that means that in this function, we need to check which transition ended. 
-                    If the transition that ended is the "offscreen-left" transition, then we need to remove the offscreen-left from the cat that has it. Removing the "offscreen-left" will make the kitty rejoin the queue 
-
-                    If the transition that ended is the "onscreen" transition, do nothing!
-
-            How can we tell which transition ended?
-                I won't give the answer, but you need to use the "event" object :) 
-        */
 })();
